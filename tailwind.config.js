@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import { themes } from "daisyui/src/theming/themes";
+import daisyui from "daisyui";
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -11,14 +14,12 @@ export default {
       sm: "400px", // decrease small breakpoint from 640px to support small phones (e.g. iPhone SE)
     },
   },
-  // eslint-disable-next-line no-undef
-  plugins: [require("daisyui")],
+  plugins: [daisyui],
   daisyui: {
     themes: [
       {
         bumblebee: {
-          // eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
-          ...require("daisyui/src/theming/themes")["bumblebee"],
+          ...themes["bumblebee"],
           primary: "#FCE589",
         },
       },
